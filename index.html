@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cfa320616e.js" crossorigin="anonymous"></script>
+    <title>履歷表</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #2a2a2a, #111);
+        }
+
+        h2 {
+            margin: 0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        h3 {
+            position: relative;
+            font-size: 24px;
+            padding-bottom: 8px;
+            padding-top: 8px;
+        }
+
+        h3::after {
+            content: '';
+            /* border: none; */
+            border-bottom: solid 2px #fff;
+            width: 108%;
+            position: absolute;
+            top: 65px;
+            right: -30px;
+        }
+
+        h4 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        ul {
+            padding: 0;
+            /* list-style: none; */
+        }
+
+        p {
+            margin-top: 10px;
+            font-weight: 400;
+            font-size: 16px;
+            /*   text-align: center; */
+        }
+
+        .frame {
+            display: flex;
+            min-height: 60vh;
+            /* max-width: 1200px; */
+            border: solid 2px white;
+            box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        /* Left */
+        .left {
+            flex: 4;
+            background-color: #778DA9;
+            padding-left: 25px;
+            /* padding-right: 25px; */
+            color: white;
+        }
+
+        .left h3 {
+            line-height: 29px;
+            letter-spacing: 1px;
+        }
+
+        .myPhoto {
+            align-self: center;
+        }
+
+        .myPhoto img {
+            width: 90%;
+            padding-top: 20px;
+            position: relative;
+
+        }
+
+        .box {
+            display: flex;
+        }
+
+        .fa-solid {
+            margin-top: 14px;
+            margin-right: 10px;
+        }
+
+        .lstSkill {
+            /* column-count: 2; */
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 10em 10em;
+            column-gap: 2rem;
+        }
+
+        .lstSkill>ul {
+            margin: 0;
+            padding-top: 8px;
+            list-style-position: inside;
+        }
+
+        .lstSkill>ul>li {
+            padding: 1px 0px;
+        }
+
+        /* Right */
+        .right {
+            /* width: 610px; */
+            flex: 8;
+            background-color: #fff;
+        }
+
+        .title {
+            font-weight: 600;
+        }
+
+        .personal-bg {
+            background: #E0E1DD;
+            background-size: cover;
+            width: 100%;
+            height: 200px;
+            position: relative;
+            /* margin-top:50px; */
+        }
+
+        .personal-txt-block {
+            position: absolute;
+            width: 100%;
+            margin-left: 50px;
+            margin-top: -30px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .personal-bg h1 {
+            margin-top: 15px;
+            color: #415A77;
+            font-size: 60px;
+
+        }
+
+        .personal-bg small {
+            background-color: #415A77;
+            font-size: 36px;
+            color: #fff;
+            position: absolute;
+            top: 100px;
+            padding: 10px 10px;
+
+        }
+
+        .about,
+        .experience,
+        .education {
+            padding: 0 50px;
+            padding-top: 20px;
+        }
+
+        .listExperience>li,
+        .listEducation>li {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .listExperience li ul,
+        .listEducation li ul {
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+
+        .year {
+            padding-right: 8px;
+            border-right: solid 4px #056DAB;
+        }
+
+        .listExperience>li:nth-child(1) ul {
+            list-style-position: outside;
+        }
+
+        @media(max-width: 992px) {
+            .left,
+            .right {
+                height: 1050px;
+            }
+        }
+        @media(max-width: 576px) {
+            
+            body {
+                display: block;
+                margin:0 auto;
+                padding: 8;
+            }
+            .frame {
+                display: inline-block;
+                margin:0 auto;
+                padding: 0;
+                box-shadow:none;
+            }
+            .personal-bg {
+                display: none;
+            }
+            .left{
+                min-height: 200vh;
+                max-height: 250vh;
+            }
+            .right {
+                min-height: 180vh;
+                max-height: 250vh;
+            }
+            h3::after {
+                content: '';
+                /* border: none; */
+                border-bottom: solid 2px #fff;
+                width: 90%;
+                position: absolute;
+                top: 45px;
+                right: 25px;
+            }
+            .lstSkill {
+                display: block;
+            }
+            .about,
+            .experience,
+            .education {
+                padding: 0 12px;
+                padding-top: 20px;
+            }
+        } 
+
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="left">
+            <div class="myPhoto">
+                <img src="./images/Portrait.jpg" alt="個人照">
+            </div>
+            <div class="info">
+                <h3>INFO</h3>
+                <div class="box">
+                    <i class="fa-solid fa-user"></i>
+                    <p>姓名 | Name<br>游凱婷 Kai Yu</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>電子郵件 | Email<br>kaiting48@gmail.com</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>聯絡電話 | Phone Number<br>0988-858-091</p>
+                </div>
+            </div>
+            <div class="skills">
+                <h3>SKILLS</h3>
+                <div class="lstSkill">
+                    <ul>
+                        <h4>前端技術</h4>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>SASS/SCSS</li>
+                        <li>RWD</li>
+                    </ul>
+                    <ul>
+                        <h4>其他技能</h4>
+                        <li>GitHub版控</li>
+                        <li>ASP.NET</li>
+                        <li>後端MVC架構</li>
+                        <li>MS SQL</li>
+                    </ul>
+                    <ul>
+                        <h4>JavaScript</h4>
+                        <li>ES6</li>
+                        <li>jQuery</li>
+                        <li>AJAX/JSON</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="personal-bg">
+                <div class="personal-txt-block">
+                    <h1>游凱婷 | Kai Yu</h1>
+                    <small>Frontend Engineer</small>
+                </div>
+            </div>
+            <div class="about">
+                <h2 class="title">關於我 | About Me</h2>
+                <div class="profile"></div>
+                <span>具有 7 年以上系統開發經驗的程式設計師，專業技能涵蓋使用MVC架構架設系統、系統維護、表單流程設計及需求分析等。於 2023 年赴加拿大修習 UI/UX
+                    課程，掌握使用者介面設計的基礎知識與技能，並參與實作專案，如：為婚禮化妝師設計網站，將專業化妝技術與美髮服務內容系統化，並提供友善的預訂系統。後端工程師經驗加上UI/UX的學習體驗，萌生轉職「前端工程師」的想法，對使用者體驗充滿熱忱，期望結合開發與設計能力，打造直覺且高效的前端介面。</span>
+            </div>
+            <div class="experience">
+                <h2 class="title">工作經驗 | Work Experience</h2>
+                <ul class="listExperience">
+                    <li>
+                        <div class="year">2022</div>
+                        <ul>
+                            <h4>程式設計師 | 叡揚資訊股份有限公司</h4>
+                            <li>客製開發企業內部所需系統，提升客戶作業效率，參與專案包含SGS實驗室資訊管理系統(LIMS)。</li>
+                            <li>運用 Git 進行版本控管，熟悉 Git flow 開發流程。</li>
+                            <li>負責 RESTful API 串接，使用 Axios 處理非同步資料交換。</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="year">2019</div>
+                        <ul>
+                            <h4>客服工程師 | 慧智科技股份有限公司</h4>
+                            <li>協助中大型企業導入「企業流程管理平台」，專案導入包含人事管理、公文管理等公司內部系統。</li>
+                            <li>提供專業的教育訓練，指導客戶操作系統以及提供導入建議。</li>
+                            <li>負責客戶表單內容維護與版面優化，使用 HTML5、CSS3 進行修改，並優化頁面讀取速度。</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="year">2015</div>
+                        <ul>
+                            <h4>實習生 | 百佳泰股份有限公司</h4>
+                            <li>負責測試硬體與硬體之間的相容性，例如：顯示卡與螢幕之間的相容性。</li>
+                            <li>識別使用者可能存在的操作問題。</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="education">
+                <h2 class="title">學歷 | Education</h2>
+                <ul class="listEducation">
+                    <li>
+                        <div class="year">2023</div>
+                        <ul>
+                            <h4>UI/UX設計專業實習課程(UI/UX Designer Specialist Co-op Diploma) | </h4>
+                            <h4>Cornerstone International Community College of Canada</h4>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="year">2015</div>
+                        <ul>
+                            <h4>資訊管理學系 | 國立勤益科技大學</h4>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+</body>
+
+</html>
